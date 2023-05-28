@@ -8,10 +8,6 @@
   --color-c3d4da: #ced4da;
 }
 
-body {
-  font-family: Roboto, sans-serif;
-}
-
 .green {
   color: var(--color-47ad24);
   font-size: 14px;
