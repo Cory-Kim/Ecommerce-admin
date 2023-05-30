@@ -1,5 +1,6 @@
 import React from 'react'
 import CustomInput from '../components/CustomInput';
+import {Link} from 'react-router-dom'
 
 const Login = () =>
 {
@@ -16,7 +17,10 @@ const Login = () =>
         <form action=''>
           <CustomInput type='text' label='Email Address' id='email' />
           <CustomInput type='password' label='Password' id='pass' />
-          <button className='border-0 px-3 py-2 text-white fw-bold w-100' type="submit" style={{ "background": "#ffd333" }}>Login</button>
+          <div className='mb-3 text-end'>
+            <Link to='forgot-password' className=''>Forgot Password</Link>
+          </div>
+          <Link to='/admin' className='border-0 px-3 py-2 text-white fw-bold w-100 text-center text-decoration-none fs-5' type="submit" style={{ "background": "#ffd333" }}>Login</Link>
         </form>
       </div>
     </div>

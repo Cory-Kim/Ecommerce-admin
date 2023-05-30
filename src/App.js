@@ -1,23 +1,26 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './pages/Dashboard';
-import Login from './pages/Login';
-import Resetpassword from './pages/Resetpassword';
-import Forgotpassword from './pages/Forgotpassword';
-import MainLayout from './components/MainLayout';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import Resetpassword from "./pages/Resetpassword";
+import Forgotpassword from "./pages/Forgotpassword";
+import MainLayout from "./components/MainLayout";
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/reset-password' element={<Resetpassword />} />
-        <Route path='/forgot-password' element={<Forgotpassword />} />
-        <Route path='/admin' element={<MainLayout />} />
-        {/* <Route index element={<Dashboard />} /> */}
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/reset-password" element={<Resetpassword />} />
+                <Route path="/forgot-password" element={<Forgotpassword />} />
+                <Route path="/admin" element={<MainLayout />}>
+                    {/* Nested routes for the MainLayout component */}
+                    <Route index element={<Dashboard />} />
+                    {/* Add your other nested routes here */}
+                </Route>
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
