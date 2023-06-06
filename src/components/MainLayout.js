@@ -191,7 +191,7 @@ const MainLayout = () => {
                             onClick: () => setCollapsed(!collapsed),
                         }
                     )}
-                    <Button
+                    {/* <Button
                         type="text"
                         icon={
                             collapsed ? (
@@ -206,7 +206,7 @@ const MainLayout = () => {
                             width: 64,
                             height: 64,
                         }}
-                    />
+                    /> */}
 
                     <div className="d-flex gap-4 align-items-center">
                         <div className="position-relative">
@@ -241,14 +241,7 @@ const MainLayout = () => {
                         background: colorBgContainer,
                     }}
                 >
-                    <div
-                        style={{
-                            background: "#fff",
-                            padding: "10px",
-                            borderRadius: "4px",
-                            minHeight: "100%",
-                        }}
-                    >
+                    <div>
                         <Outlet />
                     </div>
                 </Content>

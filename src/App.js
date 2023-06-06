@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Resetpassword from "./pages/Resetpassword";
 import Forgotpassword from "./pages/Forgotpassword";
 import MainLayout from "./components/MainLayout";
+import Enquiries from "./pages/Enquiries";
 
 function App() {
     return (
@@ -17,6 +18,8 @@ function App() {
                     {/* Nested routes for the MainLayout component */}
                     <Route index element={<Dashboard />} />
                     {/* Add your other nested routes here */}
+
+                    <Route path="enquiries" element={<Enquiries />} />
                 </Route>
             </Routes>
         </Router>
