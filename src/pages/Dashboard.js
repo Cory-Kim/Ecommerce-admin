@@ -2,7 +2,6 @@ import React from "react";
 import { BsArrowDownRight, BsArrowUpRight } from "react-icons/bs";
 import { Column } from "@ant-design/plots";
 import { Table } from "antd";
-
 const columns = [
     {
         title: "SNo",
@@ -30,7 +29,6 @@ for (let i = 0; i < 46; i++) {
         staus: `London, Park Lane no. ${i}`,
     });
 }
-
 const Dashboard = () => {
     const data = [
         {

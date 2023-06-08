@@ -22,24 +22,14 @@ const columns = [
         dataIndex: "name",
     },
     {
-        title: "Email",
-        dataIndex: "email",
+        title: "Product",
+        dataIndex: "product",
     },
     {
-        title: "Mobile",
-        dataIndex: "mobile",
-    },
-    {
-        title: "Staus",
-        dataIndex: "status",
-    },
-
-    {
-        title: "Action",
-        dataIndex: "action",
+        title: "Status",
+        dataIndex: "staus",
     },
 ];
-
 const data1 = [];
 for (let i = 0; i < 46; i++) {
     data1.push({
