@@ -10,7 +10,7 @@ import Bloglist from "./pages/Bloglist";
 import Blogcatlist from "./pages/Blogcatlist";
 import Orders from "./pages/Orders";
 import Customers from "./pages/Customers";
-import Colorlist from "./pages/Colotlist";
+import Colorlist from "./pages/Colorlist";
 import Categorylist from "./pages/Categorylist";
 import Brandlist from "./pages/Brandlist";
 import Productlist from "./pages/Productlist";
@@ -61,6 +61,7 @@ function App() {
                     <Route path="brand/:id" element={<Addbrand />} />
                     <Route path="list-product" element={<Productlist />} />
                     <Route path="product" element={<Addproduct />} />
+                    <Route path="prodcategory/:id" element={<Addcat />} />
                 </Route>
             </Routes>
         </Router>

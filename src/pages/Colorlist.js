@@ -63,12 +63,13 @@ const Colorlist = () => {
     }
     const deleteColor = (e) => {
         dispatch(deleteAColor(e));
-
         setOpen(false);
-        setTimeout(() => {
-            dispatch(getColors());
-        }, 100);
     };
+
+    useEffect(() => {
+        dispatch(getColors());
+    }, [deleteColor, dispatch]);
+
     return (
         <div>
             <h3 className="mb-4 title">Colors</h3>

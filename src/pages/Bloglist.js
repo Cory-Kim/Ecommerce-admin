@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteABlog, getBlogs, resetState } from "../features/blogs/blogSlice";
 import { BiEdit } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteABlog, getBlogs, resetState } from "../features/blogs/blogSlice";
 import CustomModal from "../components/CustomModal";
 
 const columns = [
@@ -42,6 +42,7 @@ const Bloglist = () => {
         dispatch(resetState());
         dispatch(getBlogs());
     }, []);
+
     const getBlogState = useSelector((state) => state.blogs.blogs);
     const data1 = [];
     for (let i = 0; i < getBlogState.length; i++) {
@@ -49,7 +50,6 @@ const Bloglist = () => {
             key: i + 1,
             name: getBlogState[i].title,
             category: getBlogState[i].category,
-
             action: (
                 <>
                     <Link
@@ -68,14 +68,16 @@ const Bloglist = () => {
             ),
         });
     }
+
     const deleteBlog = (e) => {
         dispatch(deleteABlog(e));
-
         setOpen(false);
-        setTimeout(() => {
-            dispatch(getBlogs());
-        }, 100);
     };
+
+    useEffect(() => {
+        dispatch(getBlogs());
+    }, [deleteBlog, dispatch]);
+
     return (
         <div>
             <h3 className="mb-4 title">Blogs List</h3>
